@@ -9,9 +9,7 @@
 + id:   "69c8438b-5aef-442f-a70d-e0d783ea2b38" (string, required)
 + name: "Großer Woog" (string, required)
 
-## Lake (object)
-+ id:   "69c8438b-5aef-442f-a70d-e0d783ea2b38" (string, required)
-+ name: "Großer Woog" (string, required)
+## Lake (LakeInfo)
 + data: (LakeData)
 
 # Lakes [/lake]
