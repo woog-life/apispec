@@ -17,3 +17,10 @@
 # GET /lake
 + Response 200 (application/json)
     + Attributes (array[LakeInfo])
+
+
+# GET /lake/{lake_uuid}
++ Response 200 (application/json)
+    + Attributes (Lake)
+    + Parameters
+        + lake_uuid (string) - UUID of the lake to get data for
