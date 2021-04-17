@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: validate lake.md
         run: |
-          ! drafter --validate lake.md 2>&1 | egrep -i "(warning|error)"
+          ! drafter --validate apiary.apib 2>&1 | egrep -i "(warning|error)"
