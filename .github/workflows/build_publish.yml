@@ -18,4 +18,4 @@ jobs:
           format: markdown
           to: ${{ secrets.CI_FAILURE_TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_CI_TOKEN_RAW }}
-          args: ${{ github.action }} failed in $repo failed after [commit](https://github.com/woog-life/$repo/$commit.sha) push
+          args: job failed in woog-life/apispec after push ([CI](https://github.com/woog-life/apispec/actions))
