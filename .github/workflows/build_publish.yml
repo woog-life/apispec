@@ -1,0 +1,14 @@
+name: validate apiblueprint files
+
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    container: apiaryio/drafter
+    steps:
+      - uses: actions/checkout@v1
+      - name: validate lake.md
+        run: drafter lake.md
+      - name: validate lake.md
+        run: drafter lake.md | grep "OK."
