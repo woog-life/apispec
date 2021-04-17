@@ -9,4 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: validate lake.md
-        run: ! drafter --validate lake.md |& egrep -i "(warning|error)"
+        run: |
+          ! drafter --validate lake.md |& egrep -i "(warning|error)"
