@@ -17,5 +17,5 @@ jobs:
         with:
           format: markdown
           to: ${{ secrets.CI_FAILURE_TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          token: ${{ secrets.TELEGRAM_CI_TOKEN_RAW }}
           args: job in $GITHUB_REPOSITORY failed after $GITHUB_ACTOR pushed ([commit](https://github.com/woog-life/apispec/commit/$GITHUB_SHA)).
