@@ -9,6 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: validate lake.md
-        run: drafter lake.md
-      - name: validate lake.md
-        run: drafter lake.md | grep "OK."
+        run: ! drafter --validate lake.md |& egrep -i "(warning|error)"
