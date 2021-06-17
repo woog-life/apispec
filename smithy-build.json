@@ -1,0 +1,8 @@
+{
+    "version": "1.0",
+    "plugins": {
+        "openapi": {
+            "service": "wooglife.v2#Wooglife"
+        }
+    }
+}

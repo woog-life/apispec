@@ -1,0 +1,14 @@
+[versions]
+smithy = "1.8.0"
+
+[libraries]
+
+[libraries.smithy-model]
+group = "software.amazon.smithy"
+name= "smithy-model"
+version.ref = "smithy"
+
+[libraries.smithy-aws-traits]
+group = "software.amazon.smithy"
+name= "smithy-aws-traits"
+version.ref = "smithy"
