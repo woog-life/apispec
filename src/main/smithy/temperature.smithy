@@ -2,6 +2,7 @@ namespace wooglife.v2
 
 use wooglife.common#DateTime
 use wooglife.common#Uuid
+use wooglife.common#NoContent
 
 resource Temperature {
     read: GetTemperature,
@@ -35,7 +36,7 @@ structure GetTemperatureOutput {
 }
 
 @idempotent
-@http(method: "PUT", uri: "/lake/{id}/temperature")
+@http(method: "PUT", uri: "/lake/{id}/temperature", code: 204)
 operation PutTemperature {
     input: PutTemperatureInput,
 }

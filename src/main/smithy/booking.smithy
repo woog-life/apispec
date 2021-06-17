@@ -40,7 +40,7 @@ structure GetBookingEvent {
 }
 
 @idempotent
-@http(method: "PUT", uri: "/lake/{id}/booking")
+@http(method: "PUT", uri: "/lake/{id}/booking", code: 204)
 operation PutBookings {
     input: PutBookingsInput,
 }
