@@ -24,6 +24,9 @@ structure GetTemperatureInput {
 
     @httpQuery("at")
     time: DateTime,
+
+    @httpQuery("precision")
+    precision: Precision,
 }
 
 structure GetTemperatureOutput {
@@ -58,3 +61,6 @@ structure PutTemperatureBody {
     @required
     temperature: PrimitiveDouble
 }
+
+@range(min: 0, max: 5)
+integer Precision
