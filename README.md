@@ -1,7 +1,3 @@
 # apispec
 
-[documentation](https://wooglife.docs.apiary.io/)
-
-[apibluepint](https://apiblueprint.org/)
-
-validated with [drafter](https://github.com/apiaryio/drafter)
+[Smithy specification](https://awslabs.github.io/smithy/1.0/spec/index.html)
