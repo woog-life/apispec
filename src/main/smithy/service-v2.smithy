@@ -10,6 +10,7 @@ service Wooglife {
     resources: [
         Lake,
         Temperature,
+        TemperatureExtrema,
         Booking,
     ],
 }

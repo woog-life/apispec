@@ -7,6 +7,7 @@ use wooglife.common#NoContent
 resource Temperature {
     read: GetTemperature,
     update: PutTemperature,
+
 }
 
 @readonly
@@ -14,7 +15,7 @@ resource Temperature {
 @http(method: "GET", uri: "/lake/{id}/temperature")
 operation GetTemperature {
     input: GetTemperatureInput,
-    output: GetTemperatureOutput,
+    output: TemperatureData,
 }
 
 structure GetTemperatureInput {
@@ -29,7 +30,7 @@ structure GetTemperatureInput {
     precision: Precision,
 }
 
-structure GetTemperatureOutput {
+structure TemperatureData {
     @required
     time: DateTime,
     @required
@@ -64,3 +65,30 @@ structure PutTemperatureBody {
 
 @range(min: 0, max: 5)
 integer Precision
+
+
+resource TemperatureExtrema {
+    read: GetTemperatureExtrema,
+}
+
+@readonly
+@auth([])
+@http(method: "GET", uri: "/lake/{id}/temperature/extrema")
+operation GetTemperatureExtrema {
+    input: GetTemperatureExtremaInput,
+    output: GetTemperatureExtremaOutput,
+}
+
+structure GetTemperatureExtremaInput {
+    @httpLabel
+    @required
+    id: Uuid,
+
+    @httpQuery("precision")
+    precision: Precision,
+}
+
+structure GetTemperatureExtremaOutput {
+    min: TemperatureData,
+    max: TemperatureData,
+}
