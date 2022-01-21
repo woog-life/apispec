@@ -10,6 +10,14 @@ resource Temperature {
 
 }
 
+@documentation(
+    """
+    Get the temperature of a specific lake.
+
+    The temperature can be retrieved for a specific point in time using the `at` paramter. If no time is requested, the
+    latest data is returned.
+    """
+)
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake/{id}/temperature")
@@ -31,6 +39,7 @@ structure GetTemperatureInput {
 }
 
 structure TemperatureData {
+    @documentation("The exact time of the temperature measurement.")
     @required
     time: DateTime,
     @required
