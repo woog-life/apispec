@@ -1,14 +1,17 @@
 [versions]
-smithy = "1.9.0"
+smithy = "1.16.3"
 
 [libraries]
 
 [libraries.smithy-model]
 group = "software.amazon.smithy"
-name= "smithy-model"
+name = "smithy-model"
 version.ref = "smithy"
 
 [libraries.smithy-aws-traits]
 group = "software.amazon.smithy"
-name= "smithy-aws-traits"
+name = "smithy-aws-traits"
 version.ref = "smithy"
+
+[plugins]
+smithy = { id = "software.amazon.smithy", version = "0.6.0" }
