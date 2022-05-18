@@ -36,7 +36,7 @@ structure ListLakesOutput {
     lakes: Lakes,
 }
 
-set Lakes {
+list Lakes {
     member: LakeOutput,
 }
 
