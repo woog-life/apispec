@@ -1,5 +1,13 @@
 {
     "extends": [
         "github>woog-life/renovate-config"
+    ],
+    "packageRules": [
+        {
+            "groupName": "smithy",
+            "matchPackagePrefixes": [
+                "software.amazon.smithy"
+            ]
+        }
     ]
 }
