@@ -1,5 +1,5 @@
 {
     "extends": [
-        "github>woog-life/apispec"
+        "github>woog-life/renovate-config"
     ]
 }
