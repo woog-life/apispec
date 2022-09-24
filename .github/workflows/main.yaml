@@ -6,4 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     container: openjdk:17-slim
     steps:
+      - uses: actions/checkout@v3
       - run: ./gradlew check
