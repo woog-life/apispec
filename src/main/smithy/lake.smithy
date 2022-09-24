@@ -49,7 +49,8 @@ structure LakeOutput {
     supportedFeatures: FeatureSet
 }
 
-set FeatureSet {
+@uniqueItems
+list FeatureSet {
     member: Feature
 }
 
