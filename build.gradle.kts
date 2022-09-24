@@ -15,6 +15,7 @@ buildscript {
 
 dependencies {
     implementation(libs.smithy.model)
+    implementation(libs.smithy.linters)
     implementation(libs.smithy.aws.traits)
 }
 

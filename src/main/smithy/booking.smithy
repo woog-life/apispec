@@ -1,3 +1,5 @@
+$version: "1"
+
 namespace wooglife.v2
 
 use wooglife.common#DateTime

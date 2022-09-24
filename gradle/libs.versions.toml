@@ -8,6 +8,11 @@ group = "software.amazon.smithy"
 name = "smithy-model"
 version.ref = "smithy"
 
+[libraries.smithy-linters]
+group = "software.amazon.smithy"
+name = "smithy-linters"
+version.ref = "smithy"
+
 [libraries.smithy-aws-traits]
 group = "software.amazon.smithy"
 name = "smithy-aws-traits"
