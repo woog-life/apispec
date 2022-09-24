@@ -1,0 +1,9 @@
+name: Main
+on: [ push ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container: openjdk:17-slim
+    steps:
+      - run: ./gradlew check
