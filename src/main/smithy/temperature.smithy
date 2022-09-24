@@ -2,7 +2,6 @@ namespace wooglife.v2
 
 use wooglife.common#DateTime
 use wooglife.common#Uuid
-use wooglife.common#NoContent
 
 resource Temperature {
     read: GetTemperature,

@@ -2,7 +2,6 @@ namespace wooglife.v2
 
 use wooglife.common#DateTime
 use wooglife.common#Uuid
-use wooglife.v2#LakeReference
 
 resource Booking {
     read: GetBookings,
