@@ -8,11 +8,11 @@ use aws.protocols#restJson1
 @restJson1
 @httpBearerAuth
 service Wooglife {
-    version: "v2",
+    version: "v2"
     resources: [
-        Lake,
-        Temperature,
-        TemperatureExtrema,
-        Booking,
-    ],
+        Lake
+        Temperature
+        TemperatureExtrema
+        Booking
+    ]
 }

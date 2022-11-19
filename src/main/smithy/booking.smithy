@@ -6,62 +6,62 @@ use wooglife.common#DateTime
 use wooglife.common#Uuid
 
 resource Booking {
-    read: GetBookings,
-    update: PutBookings,
+    read: GetBookings
+    update: PutBookings
 }
 
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake/{id}/booking")
 operation GetBookings {
-    input: LakeReference,
-    output: GetBookingsOutput,
+    input: LakeReference
+    output: GetBookingsOutput
 }
 
 structure GetBookingsOutput {
     @required
-    events: GetBookingEvents,
+    events: GetBookingEvents
 }
 
 list GetBookingEvents {
-    member: GetBookingEvent,
+    member: GetBookingEvent
 }
 
 structure GetBookingEvent {
     @required
-    varation: String,
+    varation: String
     @required
-    bookingLink: String,
+    bookingLink: String
     @required
-    beginTime: DateTime,
+    beginTime: DateTime
     @required
-    endTime: DateTime,
+    endTime: DateTime
     @required
-    saleStartTime: DateTime,
+    saleStartTime: DateTime
 }
 
 @idempotent
 @http(method: "PUT", uri: "/lake/{id}/booking", code: 204)
 operation PutBookings {
-    input: PutBookingsInput,
+    input: PutBookingsInput
 }
 
 structure PutBookingsInput {
     @httpLabel
     @required
-    id: Uuid,
+    id: Uuid
 
     @httpPayload
     @required
-    body: PutBookingsBody,
+    body: PutBookingsBody
 }
 
 structure PutBookingsBody {
     @required
-    variation: String,
+    variation: String
 
     @required
-    events: PutBookingEvents,
+    events: PutBookingEvents
 }
 
 list PutBookingEvents {
@@ -70,13 +70,13 @@ list PutBookingEvents {
 
 structure PutBookingEvent {
     @required
-    bookingLink: String,
+    bookingLink: String
     @required
-    beginTime: DateTime,
+    beginTime: DateTime
     @required
-    endTime: DateTime,
+    endTime: DateTime
     @required
-    saleStartTime: DateTime,
+    saleStartTime: DateTime
     @required
-    isAvailable: Boolean,
+    isAvailable: Boolean
 }

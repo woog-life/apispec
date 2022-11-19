@@ -5,48 +5,48 @@ namespace wooglife.v2
 use wooglife.common#Uuid
 
 resource Lake {
-    identifiers: { id: Uuid },
+    identifiers: { id: Uuid }
 
-    read: GetLake,
-    list: ListLakes,
+    read: GetLake
+    list: ListLakes
 }
 
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake/{id}")
 operation GetLake {
-    input: LakeReference,
-    output: LakeOutput,
+    input: LakeReference
+    output: LakeOutput
 }
 
 @references([{resource: Lake}])
 structure LakeReference {
     @httpLabel
     @required
-    id: Uuid,
+    id: Uuid
 }
 
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake")
 operation ListLakes {
-    output: ListLakesOutput,
+    output: ListLakesOutput
 }
 
 structure ListLakesOutput {
     @required
-    lakes: Lakes,
+    lakes: Lakes
 }
 
 list Lakes {
-    member: LakeOutput,
+    member: LakeOutput
 }
 
 structure LakeOutput {
     @required
-    id: Uuid,
+    id: Uuid
     @required
-    name: String,
+    name: String
     @required
     supportedFeatures: FeatureSet
 }

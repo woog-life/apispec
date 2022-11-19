@@ -6,8 +6,8 @@ use wooglife.common#DateTime
 use wooglife.common#Uuid
 
 resource Temperature {
-    read: GetTemperature,
-    update: PutTemperature,
+    read: GetTemperature
+    update: PutTemperature
 
 }
 
@@ -23,51 +23,51 @@ resource Temperature {
 @auth([])
 @http(method: "GET", uri: "/lake/{id}/temperature")
 operation GetTemperature {
-    input: GetTemperatureInput,
-    output: TemperatureData,
+    input: GetTemperatureInput
+    output: TemperatureData
 }
 
 structure GetTemperatureInput {
     @httpLabel
     @required
-    id: Uuid,
+    id: Uuid
 
     @httpQuery("at")
-    time: DateTime,
+    time: DateTime
 
     @httpQuery("precision")
-    precision: Precision,
+    precision: Precision
 }
 
 structure TemperatureData {
     @documentation("The exact time of the temperature measurement.")
     @required
-    time: DateTime,
+    time: DateTime
     @required
-    temperature: Integer,
+    temperature: Integer
     @required
-    preciseTemperature: String,
+    preciseTemperature: String
 }
 
 @idempotent
 @http(method: "PUT", uri: "/lake/{id}/temperature", code: 204)
 operation PutTemperature {
-    input: PutTemperatureInput,
+    input: PutTemperatureInput
 }
 
 structure PutTemperatureInput {
     @httpLabel
     @required
-    id: Uuid,
+    id: Uuid
 
     @httpPayload
     @required
-    body: PutTemperatureBody,
+    body: PutTemperatureBody
 }
 
 structure PutTemperatureBody {
     @required
-    time: DateTime,
+    time: DateTime
 
     @required
     temperature: Double
@@ -78,27 +78,27 @@ integer Precision
 
 
 resource TemperatureExtrema {
-    read: GetTemperatureExtrema,
+    read: GetTemperatureExtrema
 }
 
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake/{id}/temperature/extrema")
 operation GetTemperatureExtrema {
-    input: GetTemperatureExtremaInput,
-    output: GetTemperatureExtremaOutput,
+    input: GetTemperatureExtremaInput
+    output: GetTemperatureExtremaOutput
 }
 
 structure GetTemperatureExtremaInput {
     @httpLabel
     @required
-    id: Uuid,
+    id: Uuid
 
     @httpQuery("precision")
-    precision: Precision,
+    precision: Precision
 }
 
 structure GetTemperatureExtremaOutput {
-    min: TemperatureData,
-    max: TemperatureData,
+    min: TemperatureData
+    max: TemperatureData
 }
