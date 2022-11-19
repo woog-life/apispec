@@ -1,4 +1,4 @@
-$version: "1"
+$version: "2"
 
 namespace wooglife.v2
 
@@ -78,5 +78,5 @@ structure PutBookingEvent {
     @required
     saleStartTime: DateTime,
     @required
-    isAvailable: PrimitiveBoolean,
+    isAvailable: Boolean,
 }

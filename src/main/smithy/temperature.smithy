@@ -1,4 +1,4 @@
-$version: "1"
+$version: "2"
 
 namespace wooglife.v2
 
@@ -44,7 +44,7 @@ structure TemperatureData {
     @required
     time: DateTime,
     @required
-    temperature: PrimitiveInteger,
+    temperature: Integer,
     @required
     preciseTemperature: String,
 }
@@ -70,7 +70,7 @@ structure PutTemperatureBody {
     time: DateTime,
 
     @required
-    temperature: PrimitiveDouble
+    temperature: Double
 }
 
 @range(min: 0, max: 5)

@@ -1,4 +1,4 @@
-$version: "1"
+$version: "2"
 
 namespace wooglife.v2
 
@@ -56,14 +56,7 @@ list FeatureSet {
     member: Feature
 }
 
-@enum([
-    {
-        value: "temperature",
-        name: "TEMPERATURE",
-    },
-    {
-        value: "booking",
-        name: "BOOKING",
-    }
-])
-string Feature
+enum Feature {
+    TEMPERATURE= "temperature"
+    BOOKING= "booking"
+}
