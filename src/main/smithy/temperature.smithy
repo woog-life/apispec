@@ -15,8 +15,8 @@ resource Temperature {
     """
     Get the temperature of a specific lake.
 
-    The temperature can be retrieved for a specific point in time using the `at` paramter. If no time is requested, the
-    latest data is returned.
+    The temperature can be retrieved for a specific point in time using the `at` paramter.
+    If no time is requested, the latest data is returned.
     """
 )
 @readonly
