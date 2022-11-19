@@ -3,6 +3,7 @@ $version: "2"
 namespace wooglife.v2
 
 use wooglife.common#DateTime
+use wooglife.common#Region
 use wooglife.common#Uuid
 
 resource Temperature {
@@ -37,6 +38,10 @@ structure GetTemperatureInput {
 
     @httpQuery("precision")
     precision: Precision
+
+    @documentation("The region the precise temperature should be formatted for.")
+    @httpQuery("formatRegion")
+    formatRegion: Region = "US"
 }
 
 structure TemperatureData {
@@ -96,6 +101,10 @@ structure GetTemperatureExtremaInput {
 
     @httpQuery("precision")
     precision: Precision
+
+    @documentation("The region the precise temperature should be formatted for.")
+    @httpQuery("formatRegion")
+    formatRegion: Region = "US"
 }
 
 structure GetTemperatureExtremaOutput {
