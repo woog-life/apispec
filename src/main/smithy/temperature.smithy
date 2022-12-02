@@ -28,6 +28,22 @@ operation GetTemperature {
     output: TemperatureData
 }
 
+apply GetTemperature @examples([
+    {
+        title: "Get latest Woog temperature with three digits of precision formatted for Germany"
+        input: {
+            id: "69c8438b-5aef-442f-a70d-e0d783ea2b38"
+            precision: 3
+            formatRegion: "DE"
+        }
+        output: {
+            time: "2022-12-02T14:28:46.926Z"
+            temperature: 6
+            preciseTemperature: "6,182"
+        }
+    }
+])
+
 structure GetTemperatureInput {
     @httpLabel
     @required
