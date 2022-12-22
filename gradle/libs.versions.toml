@@ -1,5 +1,5 @@
 [versions]
-smithy = "1.26.4"
+smithy = "1.27.0"
 
 [libraries]
 
