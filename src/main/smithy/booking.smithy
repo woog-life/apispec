@@ -5,11 +5,19 @@ namespace wooglife.v2
 use wooglife.common#DateTime
 use wooglife.common#Uuid
 
+@deprecated(
+    message: "The booking feature has been deprecated for removal.",
+    since: "2023-04-07"
+)
 resource Booking {
     read: GetBookings
     update: PutBookings
 }
 
+@deprecated(
+    message: "The booking feature has been deprecated for removal.",
+    since: "2023-04-07"
+)
 @readonly
 @auth([])
 @http(method: "GET", uri: "/lake/{id}/booking")
@@ -40,6 +48,10 @@ structure GetBookingEvent {
     saleStartTime: DateTime
 }
 
+@deprecated(
+    message: "The booking feature has been deprecated for removal.",
+    since: "2023-04-07"
+)
 @idempotent
 @http(method: "PUT", uri: "/lake/{id}/booking", code: 204)
 operation PutBookings {

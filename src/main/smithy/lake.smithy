@@ -58,5 +58,9 @@ list FeatureSet {
 
 enum Feature {
     TEMPERATURE= "temperature"
+    @deprecated(
+        message: "The booking feature has been deprecated for removal.",
+        since: "2023-04-07"
+    )
     BOOKING= "booking"
 }
