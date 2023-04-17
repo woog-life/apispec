@@ -19,4 +19,4 @@ name = "smithy-aws-traits"
 version.ref = "smithy"
 
 [plugins]
-smithy = { id = "software.amazon.smithy", version = "0.6.0" }
+smithy = { id = "software.amazon.smithy", version = "0.7.0" }
