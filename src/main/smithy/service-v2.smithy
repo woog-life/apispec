@@ -1,6 +1,6 @@
 $version: "2"
 
-namespace wooglife.v2
+namespace wooglife
 
 use aws.protocols#restJson1
 
@@ -8,7 +8,7 @@ use aws.protocols#restJson1
 @restJson1
 @httpBearerAuth
 service Wooglife {
-    version: "v2"
+    version: "v3"
     resources: [
         Lake
         Temperature

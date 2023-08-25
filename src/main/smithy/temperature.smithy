@@ -1,15 +1,10 @@
 $version: "2"
 
-namespace wooglife.v2
-
-use wooglife.common#DateTime
-use wooglife.common#Region
-use wooglife.common#Uuid
+namespace wooglife
 
 resource Temperature {
     read: GetTemperature
     update: PutTemperature
-
 }
 
 @documentation(

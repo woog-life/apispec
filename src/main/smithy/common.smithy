@@ -1,9 +1,10 @@
 $version: "2"
 
-namespace wooglife.common
+namespace wooglife
 
 string Uuid
 
+@documentation("A timestamp in ISO-8601 format.")
 @timestampFormat("date-time")
 timestamp DateTime
 

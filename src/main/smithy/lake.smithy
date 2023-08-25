@@ -1,8 +1,6 @@
 $version: "2"
 
-namespace wooglife.v2
-
-use wooglife.common#Uuid
+namespace wooglife
 
 resource Lake {
     identifiers: { id: Uuid }
