@@ -10,6 +10,7 @@ namespace wooglife
 )
 resource TidalExtrema {
     read: GetTidalExtrema
+    update: PutTidalExtrema
 }
 
 @documentation(
