@@ -13,5 +13,6 @@ service Wooglife {
         Lake
         Temperature
         TemperatureExtrema
+        TidalExtrema
     ]
 }
