@@ -13,6 +13,5 @@ service Wooglife {
         Lake
         Temperature
         TemperatureExtrema
-        Booking
     ]
 }
