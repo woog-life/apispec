@@ -81,6 +81,7 @@ structure PutTidalExtremaInput {
     id: Uuid
 
     @required
+    @length(min: 2)
     extrema: TidalExtremumDataList
 }
 
