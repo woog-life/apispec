@@ -5,7 +5,7 @@ namespace wooglife
 @documentation(
     """
     Tidal extrema (low and high tide) for 'lakes'.
-    Note that this resource is only available if the lake supports the TIDES feature.
+    Note that this resource is only available if the lake supports the `tides` feature.
     """
 )
 resource TidalExtrema {
@@ -28,7 +28,7 @@ operation GetTidalExtrema {
 }
 
 structure GetTidalExtremaInput {
-    @documentation("A lake ID. The lake must support the TIDES feature.")
+    @documentation("A lake ID. The lake must support the `tides` feature.")
     @httpLabel
     @required
     id: Uuid
@@ -75,7 +75,7 @@ operation PutTidalExtrema {
 }
 
 structure PutTidalExtremaInput {
-    @documentation("A lake ID. The lake must support the TIDES feature.")
+    @documentation("A lake ID. The lake must support the `tides` feature.")
     @httpLabel
     @required
     id: Uuid
