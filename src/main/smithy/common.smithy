@@ -4,7 +4,7 @@ namespace wooglife
 
 string Uuid
 
-@documentation("A timestamp in ISO-8601 format.")
+@documentation("A timestamp in ISO-8601 format. Must always be given in UTC timezone.")
 @timestampFormat("date-time")
 timestamp DateTime
 
