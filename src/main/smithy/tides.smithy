@@ -45,7 +45,7 @@ structure GetTidalExtremaInput {
     time: DateTime
 
     @documentation("The amount of upcoming extrema that should be returned.")
-    @httpQuery("limit")
+    @httpQuery("upcomingLimit")
     @range(min: 1, max: 20)
     upcomingLimit: Integer
 }
