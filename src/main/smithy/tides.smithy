@@ -97,5 +97,7 @@ structure TidalExtremumData {
     time: DateTime
     @documentation("Water height in meters.")
     @required
-    height: Float
+    height: WaterHeight
 }
+
+string WaterHeight
