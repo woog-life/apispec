@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     container: eclipse-temurin:17
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: ./gradlew check
