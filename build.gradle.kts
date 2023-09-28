@@ -4,8 +4,8 @@ plugins {
 
 buildscript {
     dependencies {
-        classpath("software.amazon.smithy:smithy-openapi:1.39.0")
-        classpath("software.amazon.smithy:smithy-aws-traits:1.39.0")
+        classpath("software.amazon.smithy:smithy-openapi:1.39.1")
+        classpath("software.amazon.smithy:smithy-aws-traits:1.39.1")
     }
 
     repositories {
