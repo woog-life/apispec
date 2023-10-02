@@ -42,7 +42,7 @@ structure GetTidalExtremaInput {
         """
     )
     @httpQuery("at")
-    time: DateTime
+    time: UtcDateTime
 
     @documentation("The amount of upcoming extrema that should be returned.")
     @httpQuery("upcomingLimit")
@@ -95,10 +95,11 @@ structure TidalExtremumData {
     isHighTide: Boolean
     @documentation("The (expected) time of the extremum.")
     @required
-    time: DateTime
+    time: UtcDateTime
     @documentation("Water height in meters.")
     @required
     height: WaterHeight
 }
 
+@documentation("Water height in meters. Using a dot as a decimal separator.")
 string WaterHeight

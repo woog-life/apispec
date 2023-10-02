@@ -45,7 +45,7 @@ structure GetTemperatureInput {
     id: Uuid
 
     @httpQuery("at")
-    time: DateTime
+    time: UtcDateTime
 
     @httpQuery("precision")
     precision: Precision
@@ -58,7 +58,7 @@ structure GetTemperatureInput {
 structure TemperatureData {
     @documentation("The exact time of the temperature measurement.")
     @required
-    time: DateTime
+    time: UtcDateTime
     @required
     temperature: Integer
     @required
@@ -83,7 +83,7 @@ structure PutTemperatureInput {
 
 structure PutTemperatureBody {
     @required
-    time: DateTime
+    time: UtcDateTime
 
     @required
     temperature: Double
