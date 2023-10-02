@@ -47,6 +47,9 @@ structure LakeOutput {
     name: String
     @required
     supportedFeatures: FeatureSet
+    @documentation("A time zone identifier, e.g. 'Europe/Berlin'.")
+    @required
+    timeZoneId: String
 }
 
 @uniqueItems
@@ -55,6 +58,6 @@ list FeatureSet {
 }
 
 enum Feature {
-    TEMPERATURE= "temperature"
-    TIDES= "tides"
+    TEMPERATURE = "temperature"
+    TIDES = "tides"
 }

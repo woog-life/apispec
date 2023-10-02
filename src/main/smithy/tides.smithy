@@ -42,7 +42,7 @@ structure GetTidalExtremaInput {
         """
     )
     @httpQuery("at")
-    time: UtcDateTime
+    time: DateTime
 
     @documentation("The amount of upcoming extrema that should be returned.")
     @httpQuery("upcomingLimit")
@@ -53,7 +53,7 @@ structure GetTidalExtremaInput {
 structure GetTidalExtremaOutput {
     @documentation("A list of tidal extrema, sorted by time in ascending order")
     @required
-    extrema: TidalExtremumDataList
+    extrema: TidalExtremumOutputDataList
 }
 
 @documentation(
@@ -82,20 +82,43 @@ structure PutTidalExtremaInput {
 
     @required
     @length(min: 2)
-    extrema: TidalExtremumDataList
+    extrema: TidalExtremumInputDataList
 }
 
-list TidalExtremumDataList {
-    member: TidalExtremumData
+list TidalExtremumInputDataList {
+    member: TidalExtremumInputData
 }
 
-structure TidalExtremumData {
+structure TidalExtremumInputData {
     @documentation("Whether the extremum is a high tide (false means low tide)")
     @required
     isHighTide: Boolean
     @documentation("The (expected) time of the extremum.")
     @required
     time: UtcDateTime
+    @documentation("Water height in meters.")
+    @required
+    height: WaterHeight
+}
+
+list TidalExtremumOutputDataList {
+    member: TidalExtremumOutputData
+}
+
+structure TidalExtremumOutputData {
+    @documentation("Whether the extremum is a high tide (false means low tide)")
+    @required
+    isHighTide: Boolean
+    @documentation("The (expected) time of the extremum.")
+    @required
+    time: UtcDateTime
+    @documentation(
+        """
+        The (expected) time of the extremum, expressed in the local timezone of the lake.
+        """
+    )
+    @required
+    localTime: DateTime
     @documentation("Water height in meters.")
     @required
     height: WaterHeight

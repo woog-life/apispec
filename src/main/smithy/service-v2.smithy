@@ -17,7 +17,7 @@ use aws.protocols#restJson1
 @restJson1
 @httpBearerAuth
 service Wooglife {
-    version: "v3"
+    version: "v3.1.0"
     resources: [
         Lake
         Temperature

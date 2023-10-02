@@ -32,20 +32,23 @@ apply GetTemperature @examples([
             formatRegion: "DE"
         }
         output: {
-            time: "2022-12-02T14:28:46.926Z"
+            time: "2022-12-02T14:28:46Z"
+            // sigh... Smithy won't allow me to write a timestamp with an offset here.
+            localTime: "2022-12-02T14:28:46Z"
             temperature: 6
             preciseTemperature: "6,182"
         }
     }
 ])
 
+@input
 structure GetTemperatureInput {
     @httpLabel
     @required
     id: Uuid
 
     @httpQuery("at")
-    time: UtcDateTime
+    time: DateTime
 
     @httpQuery("precision")
     precision: Precision
@@ -59,6 +62,13 @@ structure TemperatureData {
     @documentation("The exact time of the temperature measurement.")
     @required
     time: UtcDateTime
+    @documentation(
+        """
+        The exact time of the temperature mesaurement, expressed in the local timezone of the lake.
+        """
+    )
+    @required
+    localTime: DateTime
     @required
     temperature: Integer
     @required
@@ -71,6 +81,7 @@ operation PutTemperature {
     input: PutTemperatureInput
 }
 
+@input
 structure PutTemperatureInput {
     @httpLabel
     @required
@@ -105,6 +116,7 @@ operation GetTemperatureExtrema {
     output: GetTemperatureExtremaOutput
 }
 
+@input
 structure GetTemperatureExtremaInput {
     @httpLabel
     @required
@@ -118,6 +130,7 @@ structure GetTemperatureExtremaInput {
     formatRegion: Region = "US"
 }
 
+@output
 structure GetTemperatureExtremaOutput {
     min: TemperatureData
     max: TemperatureData
